@@ -1,4 +1,4 @@
-class Home {
+class HomeController {
 
     static rotas() {
         return {
@@ -8,10 +8,10 @@ class Home {
 
     index() {
         return (req, res) =>
-            res.json({
+            res.status(200).json({
                 status: `Servidor rodando na porta 2000`
             });
     }
 }
 
-module.exports = Home;
+module.exports = HomeController;
