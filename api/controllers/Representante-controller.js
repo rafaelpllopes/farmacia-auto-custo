@@ -1,19 +1,19 @@
-const PacienteDAO = require('../infra/Pacientes-dao');
+const RepresentanteDAO = require('../infra/Representantes-dao');
 const { validationResult } = require('express-validator/check');
 
-class PacientesController {
+class RepresentanteController {
 
     static rotas() {
         return {
-            pacientes: '/pacientes',
-            pacientesId: '/pacientes/:id'
+            representantes: '/representantes',
+            representantesId: '/representantes/:id'
         };
     }
 
     listar() {
         return (req, res) =>
             res.json({
-                msg: `Rota listar pacientes`
+                msg: `Rota listar representantes`
             });
     }
 
@@ -26,7 +26,7 @@ class PacientesController {
                 return;
             }
 
-            res.status(201).json({ msg: 'Paciente cadastrado com sucesso!' });
+            res.status(201).json({ msg: 'Representante cadastrado com sucesso!' });
             return;
         };
     }
@@ -34,7 +34,7 @@ class PacientesController {
     listarPorId() {
         return (req, res) => {
             res.json({
-                msg: `Rota listar paciente por id`
+                msg: `Rota listar representante por id`
             })
         };
     }
@@ -48,7 +48,7 @@ class PacientesController {
                 return;
             }
 
-            res.status(201).json({ msg: 'Paciente atualizado com sucesso!' });
+            res.status(201).json({ msg: 'Representante atualizado com sucesso!' });
             return;
         };
     }
@@ -62,10 +62,10 @@ class PacientesController {
                 return;
             }
 
-            res.status(202).json({ msg: 'Paciente deletado com sucesso!' });
+            res.status(202).json({ msg: 'Representante deletado com sucesso!' });
             return;
         };
     }
 }
 
-module.exports = PacientesController;
+module.exports = RepresentanteController;
